@@ -10,6 +10,7 @@
 
     The bids arrive from the users in the firm of <userId, number of shares, bidding pricem timestamp> until the bidding window is closed
     The acton logic assigns shares to the bidders as follows:
+    
     1. The bidder with the highest price gets the number of shares they bid for
     2. if multpile bidders have bid at the same price the bidders are assigned shares in the order in which they places their bids (earliest bids first)
 
