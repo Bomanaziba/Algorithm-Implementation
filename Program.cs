@@ -1,29 +1,32 @@
 ﻿using System;
+using System.Collections.Generic;
 using InitialPublicOfferring;
+using RomanNum;
+using StringCalculator;
 
 namespace Algorithms
 {
     class Program
     {
+        private static object StringCalc;
+
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
 
-
-            int[][] arr = new Int32[5][] {
-                new int[] {1, 5, 5, 0}, 
-                new int[] {2, 7, 8, 1}, 
-                new int[] {3, 7, 5, 1}, 
-                new int[] {4, 10, 3, 3},
-                new int[] {5, 9, 2, 3}
+            List<List<int>> arr = new List<List<int>>
+            {
+                new List<int> { 3, 7, -3, 0, 1, 8},
+                new List<int> { 1, -4, -7, -8, -6, 5},
+                new List<int> { -8, 1, 3, 3, 5, 7},
+                new List<int> { -2, 4, 3, 1, 2, 7},
+                new List<int> { 2, 4, -5, 1, 8, 4},
+                new List<int> { 5, -7, 6, 5, 2, 8}
             };
 
-            int[] result = InitialPublicOfferringAlgorithm.GetUnallocattedUsers(arr, 18);
-
-            foreach(var item in result)
-            {
-                Console.WriteLine(item);
-            }
+            
+            var max = Hacker.Algorithms.hourglassSum(arr);
+   
+            Console.WriteLine(max);
         }
     }
 }
