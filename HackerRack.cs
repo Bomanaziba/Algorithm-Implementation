@@ -148,5 +148,74 @@ namespace Hacker
 
             return new List<int> { a, b, c, d, e, f, g, h, l, o, p, q, r, s, t, u };
         }
+
+
+
+        public static int numOfIds(String pool) 
+        {
+            
+            if(pool.Length < 1 && pool.Length > 100) return 0;
+
+            if(pool.Length < 11) return 0;
+
+            int count8 = 0;
+            int tidCount = 0;
+
+            for (int i = 0; i < pool.Length; i++)
+            {
+                if(pool[i] == '8') count8++;
+                tidCount++;   
+            }
+
+            return getTIDS(tidCount, count8);
+            
+        }
+
+        private static int getTIDS(int tidCount, int count8)
+        {
+            int result = (int)tidCount/11;
+
+            if(count8 >= result)
+            {
+                return result; 
+            }
+
+            return 0;
+        }
+
+        public static long maxPoints(List<int> elements) {
+            
+            int maxSum = 0;
+
+            while(elements.Count>0)
+            {
+                int pick = getLargestSum(elements);
+
+                maxSum += pick * elements.FindAll(p=>p == pick).Count;
+
+                elements.RemoveAll(p => p == pick || p==pick+1 || p==pick-1);
+            }
+
+            return maxSum;
+        }
+
+        private static int getLargestSum(List<int> input)
+        {
+            int largest = 0;
+
+            if(input == null) return largest;
+
+            for(int j = 0; j < input.Count; j++)
+            {
+                int pick = input[j];
+
+                largest = pick > largest ? pick : largest;
+            }
+
+            return largest;
+            
+        }
     }
+
+    
 }
