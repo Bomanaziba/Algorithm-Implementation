@@ -7,7 +7,6 @@ namespace Algorithms
 {
     class Program
     {
-        private static object StringCalc;
 
         static void Main(string[] args)
         {

@@ -54,7 +54,6 @@ Using eval or similar functionality is disabled for most languages and will be c
 
     public class StringCal
     {
-        private static double previousNumber = 0;
         private static double[] operandArr = new Double[2];
         private static string number = string.Empty;
         private static double result = 0;
