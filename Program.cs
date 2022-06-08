@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using InitialPublicOfferring;
-using RomanNum;
 using StringCalculator;
 
 namespace Algorithms
@@ -12,16 +11,11 @@ namespace Algorithms
 
         static void Main(string[] args)
         {
+            var A = new int[] {3, 6, 8, 10, 15, 18, 19, 28};
 
-            List<int> arr = new List<int>
-            {
-                1, 2, 1, 3, 2, 3
-            };
+            int result = Solution.solution4("BAOOLLNNOLOLGBAX");
 
-            
-            var max = Hacker.Algorithms.maxPoints(arr);
-   
-            Console.WriteLine(max);
+            Console.WriteLine(result);            
         }
     }
 }
